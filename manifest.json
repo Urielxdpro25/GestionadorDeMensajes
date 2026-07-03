@@ -1,0 +1,25 @@
+{
+  "name": "Gestionador de Mensajes",
+  "short_name": "Mensajes",
+  "description": "Aplicación para gestionar la información de las reuniones.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f5739",
+  "theme_color": "#0f5739",
+  "icons": [
+    {
+      "src": "img192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "img512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
