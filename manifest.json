@@ -2,7 +2,7 @@
   "name": "Gestionador de Mensajes",
   "short_name": "Mensajes",
   "description": "Aplicación para gestionar la información de las reuniones.",
-  "start_url": "./index.html",
+  "start_url": "./Gestionador de mensajes.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
