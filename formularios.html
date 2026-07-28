@@ -179,7 +179,7 @@
             <input type="text" id="oracion-Fin">
 
             <button type="button" class="btn" onclick="copiarFormulario('form-mensaje')">
-                 Copiar al Portapapeles
+                Copiar al Portapapeles
             </button>
 
         </fieldset>
@@ -187,7 +187,7 @@
 
     <button class="btn" onclick="window.location.href='index.html'">Volver al Inicio</button>
     <div id="mensajeCopiado">
-         ¡Información copiada al portapapeles!
+        ¡Información copiada al portapapeles!
     </div>
 
 
@@ -211,19 +211,19 @@
                 document.getElementById("nom-Lector").value,
                 document.getElementById("oracion-Fin").value
 
-            const texto = `Nombre y Apellido Conferenciante: ${document.getElementById("nombre").
-            value}\nTítulo Conferencia: ${document.getElementById("titulo").
-            value}\nNúmero Conferencia: ${document.getElementById("numero").
-            value}\nTítulo Cántico: ${document.getElementById("titulo-Cantico").
-            value}\nNúmero Cántico: ${document.getElementById("numero-Cantico").
-            value}\nNombre Congregación Conferenciante: ${document.getElementById("nombre-Congregacion").
-            value}\n\n
-            "Información del Mensaje"\n
-            Nombre y Apellido Presidente: ${document.getElementById("nom-Presidente").
-            value}\nOración Inicial: ${document.getElementById("oracion-Ini").
-            value}\nNombre y Apellido Lector: ${document.getElementById("nom-Lector").
-            value}\nOración Final: ${document.getElementById("oracion-Fin").
-            value}`;
+            const texto = 
+            `Nombre y Apellido Conferenciante: ${document.getElementById("nombre").
+                value}\nTítulo Conferencia: ${document.getElementById("titulo").
+                    value}\nNúmero Conferencia: ${document.getElementById("numero").
+                        value}\nTítulo Cántico: ${document.getElementById("titulo-Cantico").
+                            value}\nNúmero Cántico: ${document.getElementById("numero-Cantico").
+                                value}\nNombre Congregación Conferenciante: ${document.getElementById("nombre-Congregacion").
+                                    value}\n\n
+            "Información de la atalaya "\n
+Oración Inicial: ${document.getElementById("oracion-Ini").
+                    value}\nNombre y Apellido Lector: ${document.getElementById("nom-Lector").
+                        value}\nOración Final: ${document.getElementById("oracion-Fin").
+                            value}`;
             navigator.clipboard.writeText(texto);
 
 
