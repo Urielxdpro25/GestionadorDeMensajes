@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensajes Pitch|Gestionador de Mensajes</title>
+</head>
+<body>
+
+<style>
+  body {
+        background: linear-gradient(90deg, #0f5739, #3d8e66, #45c9a4, #46b5a9, #52c9eb);
+        padding: 20px 10px;
+    }
+
+    .h1 {
+        color: white;
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 2rem;
+    }
+
+.contenedor{
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    background: #FAEBD7;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    align-items: start;
+}
+
+.card{
+    background: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.p{
+    color: #0f5739;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+@media (max-width: 900px){
+    .contenedor{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px){
+    body{ padding: 12px 8px; }
+    .h1{ font-size: 1.6rem; }
+    .contenedor{
+        grid-template-columns: 1fr;
+        padding: 12px;
+        gap: 12px;
+    }
+}
+
+</style>
+
+<h1 class="h1">Mensajes Pitch</h1>
+ <div class="contenedor">
+  <div class="card"><p class="p">Opcion 1: Buenas tardes, hermano. Espero que se encuentre muy bien. Le habla Uriel Uncos, de la congregación Barrio Don Bosco. Quería recordarle que este domingo a las 10:00 tiene la conferencia con nosotros. Desde ya, será un gusto contar con su presencia. ¡Lo esperamos!.</p></div>
+  <div class="card"><p class="p">Opcion 2: ¡Buenas tardes, hermano! ¿Cómo está? Soy Uriel Uncos, de la congregación Barrio Don Bosco. Le escribo para recordarle que este domingo a las 10:00 tenemos su conferencia. ¡Esperamos poder contar con usted! Que tenga una linda tarde.</p></div>
+  <div class="card"><p class="p">Opcion 3: Muy buenas tardes, hermano. Espero que se encuentre bien. Mi nombre es Uriel Uncos, de la congregación Barrio Don Bosco. Quería comunicarme con usted para recordarle que este domingo a las 10:00 estará dando la conferencia con nosotros. ¡Será un placer recibirlo!</p></div>
+  <div class="card"><p class="p">Opcion 4: Buenas tardes, hermano, espero que se encuentre bien. Le habla Uriel Uncos, de la congregación Barrio Don Bosco. Le envío este mensaje para recordarle que este domingo a las 10:00 tiene la conferencia con nosotros. ¡Los esperamos!</p></div>
+  <div class="card"><p class="p">Opcion 5: ¡Buenas tardes, hermano! Espero que todo ande muy bien. Le escribe Uriel Uncos, de la congregación Barrio Don Bosco, para recordarle que este domingo a las 10:00 estará a cargo de la conferencia. Será un verdadero gusto acompañarle. ¡Nos vemos pronto!</p></div>
+  <div class="card"><p class="p">Opcion 6: Saludos cordiales, hermano, espero que se encuentre excelente. Le habla Uriel Uncos, de la congregación Barrio Don Bosco. Le paso a recordar que este domingo a las 10:00 lo esperamos para su conferencia. ¡Que tenga un bendecido día!</p></div>
+ </div>
+
+</body>
+</html>
