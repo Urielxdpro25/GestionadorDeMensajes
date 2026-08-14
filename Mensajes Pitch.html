@@ -32,10 +32,10 @@
     border-radius: 15px;
     background: #FAEBD7;
     box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     gap: 18px;
-    align-items: start;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .card{
@@ -54,7 +54,8 @@
 
 @media (max-width: 900px){
     .contenedor{
-        grid-template-columns: repeat(2, 1fr);
+        flex-direction: column;
+        align-items: stretch;
     }
 }
 
@@ -62,7 +63,8 @@
     body{ padding: 12px 8px; }
     .h1{ font-size: 1.6rem; }
     .contenedor{
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: stretch;
         padding: 12px;
         gap: 12px;
     }
@@ -82,25 +84,93 @@
         color: white;
         font-size: 15px;
     }
+    .select {
+        max-width: 1000px;
+        width: 100%;
+        margin: 20px auto;
+        padding: 12px;
+        font-size: 1rem;
+        background-color: #3d8e66;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        display: block;
+    }
+
+    .select:hover {
+        background-color: #2d6e4d;
+    }
+
+    .select option {
+        background-color: #f0f0f0;
+        color: #333;
+        padding: 8px;
+    }
+
+    .btn {
+        background-color: #0f5739;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: bold;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .btn:hover {
+        background-color: #0a3a26;
+    }
 
 </style>
 
 <h1 class="h1">Mensajes Pitch</h1>
- <div class="contenedor">
-  <div class="card"><p class="p">Opcion 1: Buenas tardes, hermano. Espero que se encuentre muy bien. Le habla Uriel Uncos, de la congregación Barrio Don Bosco. Quería recordarle que este domingo a las 10:00 tiene la conferencia con nosotros. Desde ya, será un gusto contar con su presencia. ¡Lo esperamos!.</p></div>
-  <div class="card"><p class="p">Opcion 2: ¡Buenas tardes, hermano! ¿Cómo está? Soy Uriel Uncos, de la congregación Barrio Don Bosco. Le escribo para recordarle que este domingo a las 10:00 tenemos su conferencia. ¡Esperamos poder contar con usted! Que tenga una linda tarde.</p></div>
-  <div class="card"><p class="p">Opcion 3: Muy buenas tardes, hermano. Espero que se encuentre bien. Mi nombre es Uriel Uncos, de la congregación Barrio Don Bosco. Quería comunicarme con usted para recordarle que este domingo a las 10:00 estará dando la conferencia con nosotros. ¡Será un placer recibirlo!</p></div>
-  <div class="card"><p class="p">Opcion 4: Buenas tardes, hermano, espero que se encuentre bien. Le habla Uriel Uncos, de la congregación Barrio Don Bosco. Le envío este mensaje para recordarle que este domingo a las 10:00 tiene la conferencia con nosotros. ¡Los esperamos!</p></div>
-  <div class="card"><p class="p">Opcion 5: ¡Buenas tardes, hermano! Espero que todo ande muy bien. Le escribe Uriel Uncos, de la congregación Barrio Don Bosco, para recordarle que este domingo a las 10:00 estará a cargo de la conferencia. Será un verdadero gusto acompañarle. ¡Nos vemos pronto!</p></div>
-  <div class="card"><p class="p">Opcion 6: Saludos cordiales, hermano, espero que se encuentre excelente. Le habla Uriel Uncos, de la congregación Barrio Don Bosco. Le paso a recordar que este domingo a las 10:00 lo esperamos para su conferencia. ¡Que tenga un bendecido día!</p></div>
- </div>
+
+<select class="select" id="optionsSelect">
+    <option value="" disabled selected>-- Selecciona una opción de mensaje</option>
+    <option value="option1" id="option">Opción 1</option>
+    <option value="option2">Opción 2</option>
+    <option value="option3">Opción 3</option>
+    <option value="option4">Opción 4</option>
+    <option value="option5">Opción 5</option>
+    <option value="option6">Opción 6</option>
+</select>
+
+
+
+<div class="contenedor" id="contenedorCards">
+    <!-- Las tarjetas se mostrarán aquí dinámicamente -->
+     <!-- se rompio no porque Investigar -->
+</div>
 
      <footer class="footer">
         <p class="FP">© 2026 Gestionador de Mensajes. Todos los derechos reservados. La Doble U.</p>
     </footer>
 
-    <!-- Agregar botones para volver al inicio/formularios etc
-     talvez usar un select para las opciones del mensaje -->
+    <script>
+        const mensajes = {
+            option1: "Opcion 1: Buenas tardes, hermano. Espero que se encuentre muy bien. Le habla Uriel Uncos, de la congregación Barrio Don Bosco. Quería recordarle que este domingo a las 10:00 tiene la conferencia con nosotros. Desde ya, será un gusto contar con su presencia. ¡Lo esperamos!.",
+            option2: "Opcion 2: Buenas tardes, hermano. Espero que se encuentre muy bien. Le habla Uriel Uncos, de la congregación Barrio Don Bosco. Quería recordarle que este domingo a las 10:00 tiene la conferencia con nosotros. Desde ya, será un gusto contar con su presencia. ¡Lo esperamos!.",
+            option3: "Opcion 3: ¡Buenas tardes, hermano! ¿Cómo está? Soy Uriel Uncos, de la congregación Barrio Don Bosco. Le escribo para recordarle que este domingo a las 10:00 tenemos su conferencia. ¡Esperamos poder contar con usted! Que tenga una linda tarde.",
+            option4: "Opcion 4: Muy buenas tardes, hermano. Espero que se encuentre bien. Mi nombre es Uriel Uncos, de la congregación Barrio Don Bosco. Quería comunicarme con usted para recordarle que este domingo a las 10:00 estará dando la conferencia con nosotros. ¡Será un placer recibirlo!",
+            option5: "Opcion 5: Buenas tardes, hermano, espero que se encuentre bien. Le habla Uriel Uncos, de la congregación Barrio Don Bosco. Le envío este mensaje para recordarle que este domingo a las 10:00 tiene la conferencia con nosotros. ¡Los esperamos!",
+            option6: "Opcion 6: ¡Buenas tardes, hermano! Espero que todo ande muy bien. Le escribe Uriel Uncos, de la congregación Barrio Don Bosco, para recordarle que este domingo a las 10:00 estará a cargo de la conferencia. Será un verdadero gusto acompañarle. ¡Nos vemos pronto!"
+        };
+
+      function copyPortapales() {
+    const seleccion = document.getElementById("optionsSelect").value;
+    const texto = mensajes[seleccion];
+
+    navigator.clipboard.writeText(texto);
+}
+       </script>
 
 </body>
 </html>
+
+
