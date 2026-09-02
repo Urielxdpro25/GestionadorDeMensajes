@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" href="LogoUncos.png">
+    <link rel="icon" type="image/png" href="LogoGDM.jpeg">
+    <link rel="stylesheet" href="estilos.css">
     <meta name="theme-color" content="#0f5739">
     <title>Formularios|Gestionador de Mensajes</title>
 
@@ -123,6 +124,29 @@
 
 <body>
 
+    
+    <nav class="navbar">
+
+        <div class="direccion">
+            <a href="index.html">Inicio</a>
+        </div>
+
+        <div class="direccion">
+            <a href="Mensajes Pitch.html">Mensajes Pitch</a>
+        </div>
+
+        <div class="direccion">
+            <a href="formularios.html">Formularios</a>
+        </div>
+
+        <div class="direccion">
+            <a href="Contactos.html">Contactos</a>
+        </div>
+
+    </nav>
+
+    <br>
+
     <h1>Gestionador de Mensajes</h1>
 
     <form id="form-conferenciante" class="form">
@@ -149,10 +173,6 @@
 
             <label for="nombre-Congregacion">Nombre Congregación Conferenciante:</label>
             <input type="text" id="nombre-Congregacion">
-
-            <!-- <button type="button" class="btn" onclick="copiarFormulario('form-conferenciante')">
-                📋 Copiar al Portapapeles
-            </button> -->
 
         </fieldset>
 
@@ -199,36 +219,39 @@
 
     <script>
         function copiarFormulario() {
-            document.getElementById("nombre").value,
-                document.getElementById("titulo").value,
-                document.getElementById("numero").value,
-                document.getElementById("titulo-Cantico").value,
-                document.getElementById("numero-Cantico").value,
-                document.getElementById("nombre-Congregacion").value,
-                document.getElementById("nom-Presidente").value,
-                document.getElementById("oracion-Ini").value,
-                document.getElementById("nom-Lector").value,
-                document.getElementById("oracion-Fin").value
 
-            const texto = 
-            `Nombre y Apellido Conferenciante: ${document.getElementById("nombre").
-                value}\nTítulo Conferencia: ${document.getElementById("titulo").
-                    value}\nNúmero Conferencia: ${document.getElementById("numero").
-                        value}\nTítulo Cántico: ${document.getElementById("titulo-Cantico").
-                            value}\nNúmero Cántico: ${document.getElementById("numero-Cantico").
-                                value}\nNombre Congregación Conferenciante: ${document.getElementById("nombre-Congregacion").
-                                    value}\n\n
-            "Información de la atalaya "\n
-Oración Inicial: ${document.getElementById("oracion-Ini").
-                    value}\nNombre y Apellido Lector: ${document.getElementById("nom-Lector").
-                        value}\nOración Final: ${document.getElementById("oracion-Fin").
-                            value}`;
-            navigator.clipboard.writeText(texto);
+    // 1. Construcción de la cadena con formato estructurado
+    const texto = ` Hola  ${document.getElementById("nom-Presidente").value}, aquí tienes la información del conferenciante:
 
+Información del conferenciante:
+Nombre y Apellido Conferenciante: ${document.getElementById("nombre").value}
+Título Conferencia: ${document.getElementById("titulo").value}
+Número Conferencia: ${document.getElementById("numero").value}
+Título Cántico: ${document.getElementById("titulo-Cantico").value}
+Número Cántico: ${document.getElementById("numero-Cantico").value}
+Nombre Congregación Conferenciante: ${document.getElementById("nombre-Congregacion").value}
 
+Información de la reunión:
+Nombre y Apellido Presidente: ${document.getElementById("nom-Presidente").value}
+Oración Inicial: ${document.getElementById("oracion-Ini").value}
+Nombre y Apellido Lector: ${document.getElementById("nom-Lector").value}
+Oración Final: ${document.getElementById("oracion-Fin").value}`;
+
+    // 2. Copiar al portapapeles y mostrar feedback al usuario
+    navigator.clipboard.writeText(texto)
+        .then(() => {
             const mensajeCopiado = document.getElementById("mensajeCopiado");
             mensajeCopiado.style.display = "block";
-        }
+            
+            // Oculta el mensaje automáticamente después de 3 segundos
+            setTimeout(() => {
+                mensajeCopiado.style.display = "none";
+            }, 3000);
+        })
+        .catch(err => {
+            console.error("Error al copiar el texto: ", err);
+        });
+}
 
 
         if ("serviceWorker" in navigator) {
