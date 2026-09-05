@@ -10,7 +10,7 @@ const ARCHIVOS = [
     "./",
     "./index.html",
     "./manifest.json",
-    "./LogoUncos.png",
+    "./LogoGDM.png",
     "./Contactos.html",
     "./formularios.html",
 ];
